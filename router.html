@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Introduction | Config WRT160N to corss GFW via DD-WRT</title>
+        <title>Prepare the router | Config WRT160N to corss GFW via DD-WRT</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="This is just a memo, it works on my router. Not sure it can help you!">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.6">
         
         
@@ -37,8 +37,10 @@
         
     
     
-    <link rel="next" href="./router.html" />
+    <link rel="next" href="./shadowsocks.html" />
     
+    
+    <link rel="prev" href="./index.html" />
     
 
         
@@ -47,9 +49,9 @@
         
         
     <div class="book"
-        data-level="0"
-        data-chapter-title="Introduction"
-        data-filepath="README.md"
+        data-level="1"
+        data-chapter-title="Prepare the router"
+        data-filepath="router.md"
         data-basepath="."
         data-revision="Sun Dec 20 2015 23:57:23 GMT+0800 (CST)"
         data-innerlanguage="">
@@ -67,7 +69,7 @@
 
             
     
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -80,7 +82,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1" data-path="router.html">
+        <li class="chapter active" data-level="1" data-path="router.html">
             
                 
                     <a href="./router.html">
@@ -173,23 +175,46 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="config-wrt160n-to-corss-gfw-via-ddwrt">Config WRT160N to corss GFW via DD-WRT</h1>
-<p>This is just a memo, it works on my router. Not sure it can help you!</p>
-<h2 id="prepare-the-router">Prepare the router</h2>
-<p>My router is Linksys WRT160N v3 with 8MB flash.</p>
-<h2 id="install-shadowsocks">Install Shadowsocks</h2>
-<p>I&apos;m using the Amazon EC2 as the server to install the Shadowsocks proxy server.
-Any Linux server outside the GFW is okey.</p>
-<h2 id="install-redsocks2">Install Redsocks2</h2>
-<p>Redsocks is a transparent proxy, the current Redsocks2 supports the Shadowsocks server</p>
-<ul>
-<li><a href="https://github.com/semigodking/redsocks" target="_blank">Redsocks2 Home page</a></li>
-<li><a href="https://github.com/semigodking/redsocks/wiki/REDSOCKS2%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E" target="_blank">Redsocks2 Howto</a></li>
-</ul>
-<h2 id="install-dnscrypt">Install Dnscrypt</h2>
-<p>DNSCrypt is a protocol that authenticates communications between a DNS client and a DNS resolver. 
-Download compiled binary dnscrypt-proxy for router from <a href="http://files.lancethepants.com/" target="_blank">here</a></p>
+                        <h1 id="prepare-the-router">Prepare the router</h1>
+<h3 id="download-the-ddwrt-fireware-from-ddwrtcom">Download the DD-WRT fireware from dd-wrt.com</h3>
+<p>Select your router&apos;s fireware from <a href="http://www.dd-wrt.com/site/support/router-database" target="_blank">here</a> 
+My router is WRT160N v3. So I downloaded <code>dd-wrt.v24-21061_NEWD-2_K2.6_mini_wrt160nv3.bin</code>. 
+Flush the fireware to your router. How to flush please follow the DD-WRT wiki.</p>
+<h3 id="enable-the-jffs2-support-on-your-router">Enable the JFFS2 support on your router</h3>
+<p>Open the router&apos;s control panel, mostly at <a href="http://192.168.1.1" target="_blank">http://192.168.1.1</a>; 
+<em>If it is the first time access the control panel, a username and password need to be set.</em> 
+Go to <strong>Administration -&gt; Management</strong> panel, scroll down to <strong>JFFS2 Support</strong>.</p>
+<p><img src="images/enable-jffs2.png" alt="Enable JFFS2"></p>
+<h3 id="make-sure-you-can-telnet-your-router">Make sure you can telnet your router</h3>
+<pre><code>woic@woic:~/wrt160n$ telnet 192.168.1.1
+Trying 192.168.1.1...
+Connected to 192.168.1.1.
+Escape character is &apos;^]&apos;.
 
+DD-WRT v24-sp2 mini (c) 2013 NewMedia-NET GmbH
+Release: 03/25/13 (SVN revision: 21061)
+
+DD-WRT login: root
+Password: 
+==========================================================
+
+ ____  ___    __        ______ _____         ____  _  _ 
+ | _ \| _ \   \ \      / /  _ \_   _| __   _|___ \| || | 
+ || | || ||____\ \ /\ / /| |_) || |   \ \ / / __) | || |_ 
+ ||_| ||_||_____\ V  V / |  _ &lt; | |    \ V / / __/|__   _| 
+ |___/|___/      \_/\_/  |_| \_\|_|     \_/ |_____|  |_| 
+
+                   DD-WRT v24-sp2
+               http://www.dd-wrt.com
+
+==========================================================
+
+
+BusyBox v1.21.0 (2013-03-25 01:58:36 CET) built-in shell (ash)
+Enter &apos;help&apos; for a list of built-in commands.
+
+root@DD-WRT:~# 
+</code></pre>
                     
                     </section>
                 
@@ -199,8 +224,10 @@ Download compiled binary dnscrypt-proxy for router from <a href="http://files.la
         </div>
 
         
+        <a href="./index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./router.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Prepare the router"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="./shadowsocks.html" class="navigation navigation-next " aria-label="Next page: Install Shadowsocks"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

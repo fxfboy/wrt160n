@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Introduction | Config WRT160N to corss GFW via DD-WRT</title>
+        <title>Install Shadowsocks | Config WRT160N to corss GFW via DD-WRT</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="This is just a memo, it works on my router. Not sure it can help you!">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.6">
         
         
@@ -37,8 +37,10 @@
         
     
     
-    <link rel="next" href="./router.html" />
+    <link rel="next" href="./redsocks.html" />
     
+    
+    <link rel="prev" href="./router.html" />
     
 
         
@@ -47,9 +49,9 @@
         
         
     <div class="book"
-        data-level="0"
-        data-chapter-title="Introduction"
-        data-filepath="README.md"
+        data-level="2"
+        data-chapter-title="Install Shadowsocks"
+        data-filepath="shadowsocks.md"
         data-basepath="."
         data-revision="Sun Dec 20 2015 23:57:23 GMT+0800 (CST)"
         data-innerlanguage="">
@@ -67,7 +69,7 @@
 
             
     
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -95,7 +97,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2" data-path="shadowsocks.html">
+        <li class="chapter active" data-level="2" data-path="shadowsocks.html">
             
                 
                     <a href="./shadowsocks.html">
@@ -173,22 +175,26 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="config-wrt160n-to-corss-gfw-via-ddwrt">Config WRT160N to corss GFW via DD-WRT</h1>
-<p>This is just a memo, it works on my router. Not sure it can help you!</p>
-<h2 id="prepare-the-router">Prepare the router</h2>
-<p>My router is Linksys WRT160N v3 with 8MB flash.</p>
-<h2 id="install-shadowsocks">Install Shadowsocks</h2>
-<p>I&apos;m using the Amazon EC2 as the server to install the Shadowsocks proxy server.
-Any Linux server outside the GFW is okey.</p>
-<h2 id="install-redsocks2">Install Redsocks2</h2>
-<p>Redsocks is a transparent proxy, the current Redsocks2 supports the Shadowsocks server</p>
+                        <h1 id="install-shadowsocks">Install Shadowsocks</h1>
+<h3 id="download-and-install-shadowsocks-from-github">Download and install Shadowsocks from Github</h3>
+<p><a href="https://shadowsocks.org/en/download/servers.html" target="_blank">https://shadowsocks.org/en/download/servers.html</a></p>
+<h3 id="config-the-shadowsocks-server">Config the Shadowsocks server</h3>
+<p>Shadowsocks accepts JSON format configs like this:</p>
+<pre><code>{
+    &quot;server&quot;:&quot;my_server_ip&quot;,
+    &quot;server_port&quot;:8388,
+    &quot;local_port&quot;:1080,
+    &quot;password&quot;:&quot;barfoo!&quot;,
+    &quot;timeout&quot;:600,
+    &quot;method&quot;:&quot;table&quot;
+}
+</code></pre><p>Explanation of each field:</p>
 <ul>
-<li><a href="https://github.com/semigodking/redsocks" target="_blank">Redsocks2 Home page</a></li>
-<li><a href="https://github.com/semigodking/redsocks/wiki/REDSOCKS2%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E" target="_blank">Redsocks2 Howto</a></li>
+<li>Refer to <a href="https://shadowsocks.org/en/config/quick-guide.html" target="_blank">https://shadowsocks.org/en/config/quick-guide.html</a></li>
 </ul>
-<h2 id="install-dnscrypt">Install Dnscrypt</h2>
-<p>DNSCrypt is a protocol that authenticates communications between a DNS client and a DNS resolver. 
-Download compiled binary dnscrypt-proxy for router from <a href="http://files.lancethepants.com/" target="_blank">here</a></p>
+<h3 id="test-your-shadowsocks-server">Test your Shadowsocks server</h3>
+<p>Download the Shadowssocks client for windows at
+<a href="https://shadowsocks.org/en/download/clients.html" target="_blank">https://shadowsocks.org/en/download/clients.html</a></p>
 
                     
                     </section>
@@ -199,8 +205,10 @@ Download compiled binary dnscrypt-proxy for router from <a href="http://files.la
         </div>
 
         
+        <a href="./router.html" class="navigation navigation-prev " aria-label="Previous page: Prepare the router"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./router.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Prepare the router"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="./redsocks.html" class="navigation navigation-next " aria-label="Next page: Install Redsocks2"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
