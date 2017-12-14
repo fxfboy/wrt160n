@@ -21,3 +21,10 @@ Explanation of each field:
 ### Test your Shadowsocks server
 Download the Shadowssocks client for windows at
 https://shadowsocks.org/en/download/clients.html
+
+
+### Install Shadowsocks client on WRT160n
+
+https://haoutil.com/topic/install-shadowsocks-on-ddwrt
+
+** Notes: WRT160n is a MIPS device
