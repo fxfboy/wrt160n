@@ -27,4 +27,4 @@ https://shadowsocks.org/en/download/clients.html
 
 https://haoutil.com/topic/install-shadowsocks-on-ddwrt
 
-** Notes: WRT160n is a MIPS device
+**Notes:** WRT160n is a MIPS device
