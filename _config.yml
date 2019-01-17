@@ -1,0 +1,8 @@
+title: Wrt160n
+description: redsocks, shadowsocks, chinadns, dnscrypt, gfw
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-cayman
+
+gems:
+  - jekyll-mentions
